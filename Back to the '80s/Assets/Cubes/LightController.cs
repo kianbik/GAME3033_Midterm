@@ -7,7 +7,7 @@ public class LightController : MonoBehaviour
     public Material[] cubeMaterial = new Material[6];
     public int materialStarter = 0;
     public GameObject Object;
-
+    public bool border = false;
    public float timerForColor = 2.0f;
 
     float timerRemaining;
@@ -24,12 +24,16 @@ public class LightController : MonoBehaviour
     void ChangeMaterial()
     {
         timerRemaining = timerForColor;
-
-        if (materialStarter < cubeMaterial.Length-1)
+        if (border)
         {
-            materialStarter++;
+            if (materialStarter < cubeMaterial.Length - 1)
+            {
+                materialStarter++;
+            }
+            else materialStarter = 0;
         }
-        else materialStarter = 0;
+        else
+        materialStarter = Random.Range(0, 5);
         Object.GetComponent<MeshRenderer>().material = cubeMaterial[materialStarter];
 
     }
