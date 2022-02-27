@@ -8,13 +8,13 @@ public class LightController : MonoBehaviour
     public int materialStarter = 0;
     public GameObject Object;
 
-    float timerForColor = 2.0f;
+   public float timerForColor = 2.0f;
 
-
+    float timerRemaining;
     void Update()
     {
-        timerForColor -= Time.deltaTime;
-        if (timerForColor < 0)
+        timerRemaining -= Time.deltaTime;
+        if (timerRemaining < 0)
         {
             ChangeMaterial();
 
@@ -23,7 +23,7 @@ public class LightController : MonoBehaviour
 
     void ChangeMaterial()
     {
-        timerForColor = 2.0f;
+        timerRemaining = timerForColor;
 
         if (materialStarter < cubeMaterial.Length-1)
         {
