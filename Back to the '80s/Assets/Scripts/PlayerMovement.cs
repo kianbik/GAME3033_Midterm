@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-       
+   
     }
 
     // Update is called once per frame
@@ -51,10 +51,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void GrowParty()
+    public void GrowParty()
     {
        
         GameObject follower = Instantiate(followerPrefab);
+        follower.gameObject.tag = "Follower";
         FollowAllongs.Add(follower);
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("Dancer"))
+        {
+            GrowParty();
+            Destroy(col.gameObject);
+            
+        }
+
+
     }
 }
