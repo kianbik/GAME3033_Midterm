@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject followerPrefab;
     public PauseMenuScript pauseMenu;
 
+    Rigidbody rigidbody;
+    Animator playerAnimator;
+
     // Lists
     private List<GameObject> FollowAllongs = new List<GameObject>();
     private List<Vector3> PositionsHistory = new List<Vector3>();
@@ -24,7 +27,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-   
+        playerAnimator = GetComponent<Animator>();
+        rigidbody = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -51,8 +56,12 @@ public class PlayerMovement : MonoBehaviour
 
           
             dancers.transform.LookAt(point);
-
+           
             index++;
+        }
+        if (Mathf.Abs(rigidbody.velocity.y)>3)
+        {
+            playerAnimator.SetBool("IsFalling", true);
         }
     }
 
@@ -62,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         GameObject follower = Instantiate(followerPrefab);
         follower.gameObject.tag = "Follower";
         FollowAllongs.Add(follower);
+   
     }
 
     void OnTriggerEnter(Collider col)

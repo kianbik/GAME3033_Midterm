@@ -186,6 +186,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5968177734458009134, guid: 8fcdac6bd5e98104bb440c59e11a4382, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'newVegas:Hips'\n\tTransform 'newVegas:LeftHandIndex1'\n\tTransform
+        'newVegas:LeftShoulder'\n\tTransform 'newVegas:LeftHandRing2'\n\tTransform
+        'newVegas:RightHandRing1'\n\tTransform 'newVegas:Neck'\n\tTransform 'newVegas:RightShoulder'\n\tTransform
+        'newVegas:RightArm'\n\tTransform 'newVegas:LeftHand'\n\tTransform 'newVegas:RightHandPinky1'\n\tand
+        more ...\n\tFrom animation clip 'PlayerFalling'"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fcdac6bd5e98104bb440c59e11a4382, type: 3}
 --- !u!1 &74281292
@@ -264,13 +274,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74281292}
-  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 37.19, z: -20.95}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.5735764, y: -0, z: -0, w: 0.8191521}
+  m_LocalPosition: {x: 0, y: 17.87, z: -10.44}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 2069998955}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
 --- !u!1 &113084568
 GameObject:
@@ -740,7 +750,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &854268647
 MonoBehaviour:
@@ -1105,7 +1115,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1547300257
 GameObject:
