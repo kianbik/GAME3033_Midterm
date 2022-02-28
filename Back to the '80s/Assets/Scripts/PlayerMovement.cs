@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float DancerSpeed = 5;
     public int Gap = 10;
     public int initialGap = 70;
+    public float speedRateChange;
+    float speedTimer = 10;
     Vector2 inputVector = Vector2.zero;
     PlayerInput playerInput;
     // References
@@ -22,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
     // Lists
     private List<GameObject> FollowAllongs = new List<GameObject>();
     private List<Vector3> PositionsHistory = new List<Vector3>();
-
+    
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +66,13 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.SetBool("IsFalling", true);
         }
+        speedTimer -= Time.deltaTime;
+        if (speedTimer < 0)
+        {
+            MoveSpeed += speedRateChange;
+            DancerSpeed = MoveSpeed;
+            speedTimer = 10;
+        }
     }
 
     public void GrowParty()
@@ -79,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Dancer"))
         {
             GrowParty();
+            Timer.IncreaseScore();
             Destroy(col.gameObject);
             
         }
