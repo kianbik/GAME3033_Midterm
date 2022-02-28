@@ -8,8 +8,9 @@ public class PauseMenuScript : MonoBehaviour
     public static bool isGamePaused = false;
 
     public GameObject pauseMenuUI;
-    
-  
+    public GameObject gameOverUI;
+
+
     public void Resume()
     {
        
@@ -24,6 +25,19 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0.0f;
         isGamePaused = true;
+    }
+    public void GameOver()
+    {
+
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0.0f;
+        isGamePaused = true;
+    }
+    public void Retry()
+    {
+        isGamePaused = false;
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("MainLevel");
     }
     public void LoadMainMenu()
     {

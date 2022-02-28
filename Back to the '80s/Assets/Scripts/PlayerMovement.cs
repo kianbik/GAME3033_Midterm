@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerAnimator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
-
+       
     }
 
     // Update is called once per frame
@@ -81,6 +81,12 @@ public class PlayerMovement : MonoBehaviour
             GrowParty();
             Destroy(col.gameObject);
             
+        }
+
+        if (col.gameObject.CompareTag("DeathPlane")|| col.gameObject.CompareTag("Follower"))
+        {
+            pauseMenu.GameOver();
+
         }
 
 

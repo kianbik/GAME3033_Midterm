@@ -23,9 +23,13 @@ public class FollowerScript : MonoBehaviour
         {
             followerAnimator.SetBool("IsCaptured", true);
         }
-        if (Mathf.Abs(rigidbody.velocity.y) >0)
+        if (Mathf.Abs(rigidbody.velocity.y) > 5)
         {
             followerAnimator.SetBool("IsFalling", true);
+        }
+        if (Mathf.Abs(rigidbody.velocity.y) < 5)
+        {
+            followerAnimator.SetBool("IsFalling", false);
         }
     }
 
