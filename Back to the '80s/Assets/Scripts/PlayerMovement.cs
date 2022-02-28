@@ -66,6 +66,10 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.SetBool("IsFalling", true);
         }
+        if (Mathf.Abs(rigidbody.velocity.y) < 3)
+        {
+            playerAnimator.SetBool("IsFalling", false);
+        }
         speedTimer -= Time.deltaTime;
         if (speedTimer < 0)
         {

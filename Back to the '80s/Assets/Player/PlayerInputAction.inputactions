@@ -71,7 +71,7 @@
                     "name": "",
                     "id": "35c63bec-c382-4e64-a1a2-090580af21f3",
                     "path": "<Keyboard>/space",
-                    "interactions": "Tap",
+                    "interactions": "Press(pressPoint=1,behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "Skip",
