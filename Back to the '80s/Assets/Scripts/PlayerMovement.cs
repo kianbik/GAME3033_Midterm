@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerInput playerInput;
     // References
     public GameObject followerPrefab;
+    public PauseMenuScript pauseMenu;
 
     // Lists
     private List<GameObject> FollowAllongs = new List<GameObject>();
@@ -29,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerInput.actions["Pause"].IsPressed())
+        {
+            pauseMenu.Pause();
+        }
         // Move forward
         transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         inputVector = playerInput.actions["Rotate"].ReadValue<Vector2>();
